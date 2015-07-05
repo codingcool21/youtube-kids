@@ -19,6 +19,9 @@ YoutubeKids.controller("VideoGroups", ["FirebaseRef", "$scope", function (Fireba
     var videoGroups = FirebaseRef.$getArray(FirebaseRef.$firebase().child("groups/"));
     videoGroups.$loaded().then(function () {
         $scope.videoGroups = videoGroups;
+        $scope.videoGroups.$watch(function (event) {
+            location.reload();
+        });
     })
 }]);
 YoutubeKids.controller("VideoGroupView", ["FirebaseRef", "$routeParams", "$scope", "$http", function (FirebaseRef, $routeParams, $scope, $http) {
@@ -40,6 +43,9 @@ YoutubeKids.controller("VideoGroupView", ["FirebaseRef", "$routeParams", "$scope
             getInfo(i);
         }
         $scope.videos = videosFromVideoGroup;
+        $scope.videos.$watch(function (event) {
+            location.reload();
+        });
     });
 }]);
 YoutubeKids.controller("WatchVideo", ["$scope", "$routeParams", "$sce", function ($scope, $routeParams, $sce) {
