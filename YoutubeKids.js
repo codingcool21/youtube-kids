@@ -47,7 +47,7 @@ YoutubeKids.controller("WatchVideo", ["$scope", "$routeParams", "$sce", function
         return $sce.trustAsResourceUrl(src);
     }
     $scope.video = 'https://www.youtube-nocookie.com/embed/' + $routeParams.vid + '?rel=0';
-    $("iframe").height($(window).height() - 145);
+    $("iframe").height($(window).height() - 195);
 }]);
 YoutubeKids.config(function ($routeProvider) {
     $routeProvider.when("/", {
