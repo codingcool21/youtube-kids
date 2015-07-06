@@ -69,3 +69,6 @@ YoutubeKids.config(function ($routeProvider) {
         redirectTo: "/"
     });
 });
+$(window).resize(function () {
+    $("iframe").height($(window).height() - 195);
+})
